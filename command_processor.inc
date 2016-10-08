@@ -35,6 +35,8 @@
 
 #define CMD:%1(%2) forward cmd_%1(%2); public cmd_%1(%2)
 #define COMMAND:%1(%2) forward cmd_%1(%2); public cmd_%1(%2)
+#define cmd(%1,%2) forward cmd_%1(%2); public cmd_%1(%2)
+#define command(%1,%2) forward cmd_%1(%2); public cmd_%1(%2)
 
 // ** CALLBACKS
 
