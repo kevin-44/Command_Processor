@@ -25,6 +25,10 @@
 	#error "SSCANF could not be found"
 #endif
 
+#if defined OnPlayerCommandReceived
+	forward OnPlayerCommandReceived(playerid, cmdtext[]);
+#endif
+
 #if defined OnPlayerCommandPerformed
 	forward OnPlayerCommandPerformed(playerid, cmdtext[], success);
 #endif
@@ -42,31 +46,21 @@
 
 public OnPlayerCommandText(playerid, cmdtext[])
 {
-	new cmd[32] = "cmd_", params[128];
-	if(sscanf(cmdtext[1], "s[28]s[128]", cmd[4], params))
-	{
-		for(new i = 4, j = strlen(cmd); i < j; i ++)
-		{
-			cmd[i] |= 0x20;
-		}
+	#if defined OnPlayerCommandReceived
+		if(!OnPlayerCommandReceived(playerid, cmdtext)) return 1;
+	#endif
 
-		#if defined OnPlayerCommandPerformed
-			return OnPlayerCommandPerformed(playerid, cmdtext, CallLocalFunction(cmd, "is", playerid, "\1"));
-		#else
-			return CallLocalFunction(cmd, "is", playerid, "\1");
-		#endif
-	}
-	else
-	{
-		for(new i = 4, j = strlen(cmd); i < j; i ++)
-		{
-			cmd[i] |= 0x20;
-		}
+	new cmd[32] = "cmd_", params[126] = "\1";
+	sscanf(cmdtext[1], "s[28]s[126]", cmd[4], params);
 
-		#if defined OnPlayerCommandPerformed
-			return OnPlayerCommandPerformed(playerid, cmdtext, CallLocalFunction(cmd, "is", playerid, params));
-		#else
-			return CallLocalFunction(cmd, "is", playerid, params);
-		#endif
+	for(new i = (strlen(cmd) - 1); i != 3; i --)
+	{
+		cmd[i] |= 0x20;
 	}
+
+	#if defined OnPlayerCommandPerformed
+		return OnPlayerCommandPerformed(playerid, cmdtext, CallLocalFunction(cmd, "is", playerid, params));
+	#else
+		return CallLocalFunction(cmd, "is", playerid, params);
+	#endif
 }
