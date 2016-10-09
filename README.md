@@ -4,11 +4,11 @@ This include forwards in-game command input to hard-coded functions, at a fast s
 
 Benchmark with I-ZCMD (5 consecutive tests):
 
-	This Include: 882
-	This Include: 893
-	This Include: 878
-	This Include: 883
-	This Include: 892
+	This Include: 866
+	This Include: 861
+	This Include: 864
+	This Include: 865
+	This Include: 863
 
 	I-ZCMD: 1,111
 	I-ZCMD: 1,106
@@ -16,7 +16,7 @@ Benchmark with I-ZCMD (5 consecutive tests):
 	I-ZCMD: 1,118
 	I-ZCMD: 1,115
 
-Code used to benchmark both:
+Code used to benchmark both (just note the changes in the arguments of OnPlayerCommandPerformed):
 
 	// ** MAIN
 
@@ -45,7 +45,7 @@ Code used to benchmark both:
 		return 1;
 	}
 
-	public OnPlayerCommandPerformed(playerid, cmdtext[], success)
+	public OnPlayerCommandPerformed(playerid, cmd[], params[], success)
 	{
 		/*if(success)
 		{
@@ -65,6 +65,15 @@ Code used to benchmark both:
 		//printf("%d %s", playerid, params);
 		return 1;
 	}
+
+Callbacks:
+
+	forward OnPlayerCommandReceived(playerid, cmd[], params[]);
+	forward OnPlayerCommandPerformed(playerid, cmd[], params[], success);
+
+Other:
+
+	- isnull macro will be defined by the include
 
 The example script (command_processor_example.pwn) and the include (command_processor.inc) requires:
 * SSCANF: http://forum.sa-mp.com/showthread.php?t=602923
