@@ -25,12 +25,16 @@
 	#error "SSCANF could not be found"
 #endif
 
+#if !defined isnull
+	#define isnull(%1) ((!(%1[0])) || (((%1[0]) == '\1') && (!(%1[1]))))
+#endif
+
 #if defined OnPlayerCommandReceived
-	forward OnPlayerCommandReceived(playerid, cmdtext[]);
+	forward OnPlayerCommandReceived(playerid, cmd[], params[]);
 #endif
 
 #if defined OnPlayerCommandPerformed
-	forward OnPlayerCommandPerformed(playerid, cmdtext[], success);
+	forward OnPlayerCommandPerformed(playerid, cmd[], params[], success);
 #endif
 
 // ** DEFINES
@@ -46,10 +50,6 @@
 
 public OnPlayerCommandText(playerid, cmdtext[])
 {
-	#if defined OnPlayerCommandReceived
-		if(!OnPlayerCommandReceived(playerid, cmdtext)) return 1;
-	#endif
-
 	new cmd[32] = "cmd_", params[126] = "\1";
 	sscanf(cmdtext[1], "s[28]s[126]", cmd[4], params);
 
@@ -58,8 +58,12 @@ public OnPlayerCommandText(playerid, cmdtext[])
 		cmd[i] |= 0x20;
 	}
 
+	#if defined OnPlayerCommandReceived
+		if(!OnPlayerCommandReceived(playerid, cmd[4], params)) return 1;
+	#endif
+
 	#if defined OnPlayerCommandPerformed
-		return OnPlayerCommandPerformed(playerid, cmdtext, CallLocalFunction(cmd, "is", playerid, params));
+		return OnPlayerCommandPerformed(playerid, cmd[4], params, CallLocalFunction(cmd, "is", playerid, params));
 	#else
 		return CallLocalFunction(cmd, "is", playerid, params);
 	#endif
