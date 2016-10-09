@@ -2,19 +2,27 @@
 
 This include forwards in-game command input to hard-coded functions, at a fast speed.
 
-Benchmark with I-ZCMD (5 consecutive tests):
+Benchmarks with I-ZCMD (5 consecutive tests):
 
-	This Include: 866
-	This Include: 861
-	This Include: 864
-	This Include: 865
-	This Include: 863
+	This Include: 866 | 10/09/2016
+	This Include: 861 | 10/09/2016
+	This Include: 864 | 10/09/2016
+	This Include: 865 | 10/09/2016
+	This Include: 863 | 10/09/2016
 
-	I-ZCMD: 1,111
-	I-ZCMD: 1,106
-	I-ZCMD: 1,105
-	I-ZCMD: 1,118
-	I-ZCMD: 1,115
+	I-ZCMD: 1,111 | 10/08/2016
+	I-ZCMD: 1,106 | 10/08/2016
+	I-ZCMD: 1,105 | 10/08/2016
+	I-ZCMD: 1,118 | 10/08/2016
+	I-ZCMD: 1,115 | 10/08/2016
+
+Old benchmarks (of this include, exclusively as it updates):
+
+	This Include: 882 | 10/08/2016
+	This Include: 893 | 10/08/2016
+	This Include: 878 | 10/08/2016
+	This Include: 883 | 10/08/2016
+	This Include: 892 | 10/08/2016
 
 Code used to benchmark both (just note the changes in the arguments of OnPlayerCommandPerformed):
 
