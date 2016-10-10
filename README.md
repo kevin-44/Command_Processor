@@ -18,17 +18,17 @@ Benchmarks with I-ZCMD (5 consecutive tests):
 
 Exclusive benchmarks with Pawn.CMD, as Pawn.CMD's commands are truncated to 24 characters and this include's commands are truncated to 27 characters (5 consecutive tests):
 
-	This Include: 853 | 10/08/2016
-	This Include: 848 | 10/08/2016
-	This Include: 852 | 10/08/2016
-	This Include: 850 | 10/08/2016
-	This Include: 851 | 10/08/2016
+	This Include: 853 | 10/10/2016
+	This Include: 848 | 10/10/2016
+	This Include: 852 | 10/10/2016
+	This Include: 850 | 10/10/2016
+	This Include: 851 | 10/10/2016
 
-	Pawn.CMD: 1,446 | 10/08/2016
-	Pawn.CMD: 1,451 | 10/08/2016
-	Pawn.CMD: 1,460 | 10/08/2016
-	Pawn.CMD: 1,455 | 10/08/2016
-	Pawn.CMD: 1,449 | 10/08/2016
+	Pawn.CMD: 1,446 | 10/10/2016
+	Pawn.CMD: 1,451 | 10/10/2016
+	Pawn.CMD: 1,460 | 10/10/2016
+	Pawn.CMD: 1,455 | 10/10/2016
+	Pawn.CMD: 1,449 | 10/10/2016
 
 Old benchmarks of this include as it updates (Code Used: This Include | I-ZCMD):
 
