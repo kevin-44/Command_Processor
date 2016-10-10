@@ -50,13 +50,41 @@
 
 public OnPlayerCommandText(playerid, cmdtext[])
 {
-	new cmd[32] = "cmd_", params[126] = "\1";
+	new cmd[32] = "cmd_", params[126] = "\1", length;
 	sscanf(cmdtext[1], "s[28]s[126]", cmd[4], params);
 
-	for(new i = 4; cmd[i]; i ++)
-	{
-		cmd[i] |= 0x20;
-	}
+	length = strlen(cmd);
+
+	cmd[4] |= 0x20;
+	cmd[5] |= 0x20;
+	cmd[6] |= 0x20;
+	cmd[7] |= 0x20;
+	cmd[8] |= 0x20;
+	cmd[9] |= 0x20;
+	cmd[10] |= 0x20;
+	cmd[11] |= 0x20;
+	cmd[12] |= 0x20;
+	cmd[13] |= 0x20;
+	cmd[14] |= 0x20;
+	cmd[15] |= 0x20;
+	cmd[16] |= 0x20;
+	cmd[17] |= 0x20;
+	cmd[18] |= 0x20;
+	cmd[19] |= 0x20;
+	cmd[20] |= 0x20;
+	cmd[21] |= 0x20;
+	cmd[22] |= 0x20;
+	cmd[23] |= 0x20;
+	cmd[24] |= 0x20;
+	cmd[25] |= 0x20;
+	cmd[26] |= 0x20;
+	cmd[27] |= 0x20;
+	cmd[28] |= 0x20;
+	cmd[29] |= 0x20;
+	cmd[30] |= 0x20;
+	cmd[31] |= 0x20;
+
+	cmd[length] = EOS;
 
 	#if defined OnPlayerCommandReceived
 		if(!OnPlayerCommandReceived(playerid, cmd[4], params)) return 1;
