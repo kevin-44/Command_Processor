@@ -99,8 +99,8 @@ Code used to benchmark this include with Pawn.CMD:
 	// ** INCLUDES
 
 	#include <a_samp>
-	#include <sscanf>
-	#include <My Includes/command_processor>
+	#include <sscanf2>
+	#include <command_processor>
 
 	// ** MAIN
 
@@ -161,7 +161,7 @@ Code used to benchmark this include with Pawn.CMD:
 		return 1;
 	}
 	
-Code used to benchmark Pawn.CMD with this include:
+Code used to benchmark Pawn.CMD with this include (please note that PC_EmulateCommand does not fully execute if the player isn't connected):
 
 	// ** INCLUDES
 
