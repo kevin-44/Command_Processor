@@ -4,11 +4,11 @@ This include forwards in-game command input to hard-coded functions, at a fast s
 
 Benchmarks with I-ZCMD (5 consecutive tests):
 
-	This Include: 613 | 10/10/2016
-	This Include: 610 | 10/10/2016
-	This Include: 613 | 10/10/2016
-	This Include: 617 | 10/10/2016
-	This Include: 612 | 10/10/2016
+	This Include: 513 | 10/11/2016
+	This Include: 522 | 10/11/2016
+	This Include: 512 | 10/11/2016
+	This Include: 508 | 10/11/2016
+	This Include: 513 | 10/11/2016
 
 	I-ZCMD: 1,111 | 10/08/2016
 	I-ZCMD: 1,106 | 10/08/2016
@@ -20,11 +20,11 @@ Exclusive benchmarks with Pawn.CMD, as Pawn.CMD's commands are truncated to 24 c
 
 	With Callbacks:
 
-	This Include: 659 | 10/10/2016
-	This Include: 658 | 10/10/2016
-	This Include: 663 | 10/10/2016
-	This Include: 661 | 10/10/2016
-	This Include: 664 | 10/10/2016
+	This Include: 568 | 10/11/2016
+	This Include: 571 | 10/11/2016
+	This Include: 571 | 10/11/2016
+	This Include: 570 | 10/11/2016
+	This Include: 569 | 10/11/2016
 
 	Pawn.CMD: 1,434 | 10/10/2016
 	Pawn.CMD: 1,443 | 10/10/2016
@@ -34,11 +34,11 @@ Exclusive benchmarks with Pawn.CMD, as Pawn.CMD's commands are truncated to 24 c
 
 	Without Callbacks:
 
-	This Include: 624 | 10/10/2016
-	This Include: 626 | 10/10/2016
-	This Include: 623 | 10/10/2016
-	This Include: 623 | 10/10/2016
-	This Include: 624 | 10/10/2016
+	This Include: 533 | 10/11/2016
+	This Include: 531 | 10/11/2016
+	This Include: 528 | 10/11/2016
+	This Include: 533 | 10/11/2016
+	This Include: 532 | 10/11/2016
 
 	Pawn.CMD: 484 | 10/10/2016
 	Pawn.CMD: 497 | 10/10/2016
@@ -46,7 +46,31 @@ Exclusive benchmarks with Pawn.CMD, as Pawn.CMD's commands are truncated to 24 c
 	Pawn.CMD: 487 | 10/10/2016
 	Pawn.CMD: 491 | 10/10/2016
 
+Old benchmarks of this include in comparison with Pawn.CMD as it updates:
+
+	With Callbacks:
+
+	This Include: 659 | 10/10/2016
+	This Include: 658 | 10/10/2016
+	This Include: 663 | 10/10/2016
+	This Include: 661 | 10/10/2016
+	This Include: 664 | 10/10/2016
+
+	Without Callbacks:
+
+	This Include: 624 | 10/10/2016
+	This Include: 626 | 10/10/2016
+	This Include: 623 | 10/10/2016
+	This Include: 623 | 10/10/2016
+	This Include: 624 | 10/10/2016
+
 Old benchmarks of this include as it updates (Code Used: This Include | I-ZCMD):
+
+	This Include: 613 | 10/10/2016
+	This Include: 610 | 10/10/2016
+	This Include: 613 | 10/10/2016
+	This Include: 617 | 10/10/2016
+	This Include: 612 | 10/10/2016
 
 	This Include: 841 | 10/10/2016
 	This Include: 848 | 10/10/2016
